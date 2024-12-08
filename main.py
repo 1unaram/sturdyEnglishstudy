@@ -28,8 +28,8 @@ def job():
 
 
 # 매일 새벽 2시에 실행
-schedule.every().day.at("02:00").do(is_every_two_weeks)
-
+print('Start running the job')
+schedule.every().day.at("02:00").do(job)
 
 # 1분마다 작업 확인
 while True:
