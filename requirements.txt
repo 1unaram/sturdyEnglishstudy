@@ -1,0 +1,4 @@
+schedule==1.2.2
+python-dotenv==1.0.1
+requests==2.22.0
+requests-unixsocket==0.2.0
