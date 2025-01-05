@@ -1,9 +1,9 @@
-from tasks import *
-
 from datetime import datetime
 from time import sleep
+
 import schedule
 
+from tasks import *
 
 # 스터디 시작일
 study_start_date = datetime(2024, 12, 8)

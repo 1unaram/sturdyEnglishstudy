@@ -1,7 +1,8 @@
 from datetime import datetime, timedelta, timezone
-from requests import post, patch
-from dotenv import load_dotenv
 from os import getenv
+
+from dotenv import load_dotenv
+from requests import patch, post
 
 load_dotenv()
 database_id = getenv('DATABASE_ID')
@@ -67,6 +68,8 @@ def move_pages_to_library():
         }
 
         page['deadline'] = datetime.fromisoformat(page.get('deadline'))
+        if page.get('deadline').tzinfo is None:
+            page['deadline'] = page['deadline'].replace(tzinfo=timezone.utc)
         if page.get('deadline') < datetime.now(timezone.utc):
             patch(req_url, headers=headers, json={"properties": {"Library": {"checkbox": True}}})
 
