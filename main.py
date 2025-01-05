@@ -26,6 +26,8 @@ def job():
         # 스터디 기간 블록 변경
         change_period_block()
 
+        print(f'[{datetime.now()}] Complete to do the job')
+
 
 # 매일 새벽 2시에 실행
 print('Start running the job')
