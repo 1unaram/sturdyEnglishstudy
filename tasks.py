@@ -89,7 +89,7 @@ def change_period_block():
     current_date = datetime.now().strftime('%m월 %d일')
 
     # String of 14 days later
-    deadline = (datetime.now() + timedelta(days=14)).strftime('%m월 %d일')
+    deadline = (datetime.now() + timedelta(days=13)).strftime('%m월 %d일')
 
     # change content as currnet date
     patch(req_url, headers=headers, json={
